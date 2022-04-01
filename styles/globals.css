@@ -4,19 +4,10 @@ body {
 	padding: 0;
 
 	color: var(--black);
-	/*background: #E5E5E5;*/
 
-	font-family: 'Noto Sans Display', sans-serif;
-}
+	 background-color: #E5E5E5;
 
-a {
-	text-decoration: none;
-
-	color: inherit;
-}
-
-* {
-	box-sizing: border-box;
+	font-family: "Noto Sans Display", sans-serif;
 }
 
 a {
@@ -33,10 +24,12 @@ a {
 	--black: #3B434E;
 	--white: white;
 	--light-grey: #EBEBEB;
+	--dark-grey: #787D85;
 	--primary: #7653FC;
-	--primary-hover: #51389f;
+	--primary-hover: #51389F;
 	--red: #FC836D;
 	--green: #1DC37E;
 	--light-green: #C8F8E4;
-	--font-family: 'Noto Sans KR', sans-serif;
+	--placeholder: #A4A4A4;
+	--font-family: "Noto Sans KR", sans-serif;
 }

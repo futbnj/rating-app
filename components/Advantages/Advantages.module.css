@@ -1,0 +1,11 @@
+.advantages {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 10px 40px;
+    margin-bottom: 30px;
+}
+
+.line {
+    border: 1px solid #D2D2D2;
+    background: #D2D2D2;
+}

@@ -6,18 +6,18 @@ export enum TopLevelCategory {
 }
 
 export interface PageAdvantage {
-    title: string;
-    description: string;
-    _id: string;
+    title?: string;
+    description?: string;
+    _id?: string;
 }
 
 export interface HhData {
-    count: number;
-    juniorSalary: number;
-    middleSalary: number;
-    seniorSalary: number;
-    updatedAt: Date;
-    _id: string;
+    count?: number;
+    juniorSalary?: number;
+    middleSalary?: number;
+    seniorSalary?: number;
+    updatedAt?: Date;
+    _id?: string;
 }
 
 export interface Blog {
@@ -35,16 +35,16 @@ export interface PageModel {
     alias: string;
     title: string;
     category: string;
-    seoText: string;
+    seoText?: string;
     tagsTitle: string;
     metaTitle: string;
     metaDescription: string;
     firstCategory: TopLevelCategory;
-    advantages: PageAdvantage[];
+    advantages?: PageAdvantage[];
     createdAt: Date;
     updatedAt: Date;
     __v: number;
-    hh: HhData;
+    hh?: HhData;
     qas: any[];
     addresses: any[];
     categoryOn: string;
