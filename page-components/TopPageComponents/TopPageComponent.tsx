@@ -1,7 +1,7 @@
 import {TopPageComponentProps} from "./TopPageComponent.props";
 import {Htag, Product, Sort, Tag} from "../../components";
 import styles from './TopPageComponent.module.css';
-import {HhData} from "../../components/hhData/HhData";
+import {HhData} from "../../components";
 import {TopLevelCategory} from "../../interfaces/page.interface";
 import {Advantages} from "../../components/Advantages/Advantages";
 import {SortEnum} from "../../components/Sort/Sort.props";
@@ -27,18 +27,15 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
             <div className={styles.products}>
                 {sortedProducts && sortedProducts.map(p => <Product key={p._id} product={p}/>)}
             </div>
+            <div className={styles.hhTitle}>
+                <Htag tag="h2">Вакансии - {page.category}</Htag>
+                {products && <Tag color="red" size="m">hh.ru</Tag>}
+            </div>
             {
-                firstCategory === TopLevelCategory.Courses && page.hh &&
-                <>
-                    <div className={styles.hhTitle}>
-                        <Htag tag="h2">Вакансии - {page.category}</Htag>
-                        {products && <Tag color="red" size="m">hh.ru</Tag>}
-                    </div>
-                    <HhData {...page.hh} />
-                </>
+                firstCategory === TopLevelCategory.Courses && page.hh && <HhData {...page.hh} />
             }
             {
-                firstCategory === TopLevelCategory.Courses && page.advantages?.length && page.advantages?.length > 0 &&
+                page.advantages && page.advantages.length > 0 &&
                 <>
                     <div className={styles.advantages}>
                         <Htag tag="h2">Преимущества</Htag>
