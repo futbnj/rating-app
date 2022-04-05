@@ -5,7 +5,7 @@ import {HhData} from "../../components";
 import {TopLevelCategory} from "../../interfaces/page.interface";
 import {Advantages} from "../../components/Advantages/Advantages";
 import {SortEnum} from "../../components/Sort/Sort.props";
-import {useReducer} from "react";
+import {useEffect, useReducer} from "react";
 import {sortReducer} from './sort.reducer';
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
@@ -14,6 +14,10 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
     const setSort = (sort: SortEnum) =>  {
         dispatchSort({ type: sort });
     }
+
+    useEffect(() => {
+        dispatchSort({ type: 'reset', initialState: products })
+    }, [products]);
 
     return (
         <div className={styles.wrapper}>
@@ -42,7 +46,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
                         <Advantages advantages={page.advantages} />
                         { page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText}} />}
                         <Htag tag="h2">Получаемые навыки</Htag>
-                        {page.tags.map(t => <Tag color="primary">{t}</Tag>)}
+                        {page.tags.map(t => <Tag key={t} color="primary">{t}</Tag>)}
                     </div>
                 </>
             }
